@@ -4,6 +4,7 @@ body {
 	font-size: 14px;
 	color: #0b0a0a;
 	line-height: 24px;
+	
 }
 ul {
 	margin: 0;
@@ -96,14 +97,14 @@ header .content *{
 }
 
 .welcome h1 {
-    font-size: 40px;
+    font-size: 28px;
     font-weight: bold;
 	text-transform: uppercase;
 	margin-top: 30px;
 }
 .welcome h1 span {
     display: block;
-    font-size: 20px;
+       font-size: 32px;
     letter-spacing: 4px;
     color: #f52400;
 }
@@ -243,27 +244,50 @@ header .content *{
     color: #fff;
 }
 .testi_section {
-    background: #f1f1f1;
-    margin-top: -46px;
-    float: left;
+	position: relative;
+    background-image: url(../images/road.jpg);
+	background-repeat: repeat-x;
+	background-position: 0 0;
     width: 100%;
+    background-size: cover;
+	height: 500px;
+	animation: moving 6s linear infinite;
 }
-.testi_section .testi_box{float: left; width: 50%; padding: 70px 30px 50px 0; text-align: right;}
-.testi_section .form_box{
-	float: left; width: 50%; border: 2px solid black;;padding: 70px 0 66px 30px;}
-.testi_section h1 {
-    margin: 0 0 10px 0;
-    text-transform: uppercase;
-    font-size: 30px;
-	font-weight: bold;
-	color: #2e3091;
+@keyframes moving
+{
+	from{
+		background-position: 0 0;
+	}
+	to{
+		background-position: 100% 0;
+	}
 }
-.testi_section .owl-buttons{
-	display: none;
+.movingcar{
+	position: relative;
+z-index: 99;
+	height:320px ;
+	width: 690px;
+	background-repeat: no-repeat;
 }
-.testi_section strong{font-style: italic;}
-.testi_section .testi_box p{padding: 0 0 0 115px;}
-
+.front{
+position: absolute;
+z-index: 99;
+bottom: 0;
+right: 50px;
+}
+.back{
+	position: absolute;
+	z-index: 99;
+	bottom: 0;
+	left: 105px;
+}
+#front,#back{
+	animation: wheel 2s linear infinite;
+}
+@keyframes wheel{
+	0%{transform: rotate(0deg);}
+	100%{transform: rotate(360deg);}
+}
 .form_box{
 	text-align: left;
 	color: #fff;
